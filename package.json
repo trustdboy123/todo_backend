@@ -1,0 +1,30 @@
+{
+  "name": "todo_backend",
+  "version": "1.0.0",
+  "description": "my first trial",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trustdboy123/todo_backend.git"
+  },
+  "keywords": [
+    "trustdboy"
+  ],
+  "author": "trustdboy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trustdboy123/todo_backend/issues"
+  },
+  "homepage": "https://github.com/trustdboy123/todo_backend#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.1.0",
+    "nodemon": "^2.0.15"
+  }
+}
