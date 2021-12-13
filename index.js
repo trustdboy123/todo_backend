@@ -28,25 +28,25 @@ mongoose.connect(db,
                 //res.status(400).send('failed to fetch todo',error)
                
             }
-             // get all todos
-    app.get('/todos', async(req,res)=>{
-       try {
-        const todos = await TodoModel.find({});
-        return res.status(200).json({
-            status: true,
-            message: 'Todos fetched suvvessfully',
-            data:todos
         })
-       } catch (error) {
-           console.log('SOmething Went Wrong', error);
-           res.status(400).send('Failed to Fetch todos',error)
-       }
-        
-
-    })
+        // get all todos
+    app.get('/todos', async(req,res)=>{
+        try {
+         const todos = await TodoModel.find({});
+         return res.status(200).json({
+             status: true,
+             message: 'Todos fetched suvvessfully',
+             data:todos
+         })
+        } catch (error) {
+            console.log('SOmething Went Wrong', error);
+            res.status(400).send('Failed to Fetch todos',error)
+        }
+         
+ 
+     })
          //update a todo
-    app.patch('/todo/id', async(req,res)=>{})
-    try {
+    app.patch('/todo/id', async(req,res)=>{ try {
         const{id} = re.params;
         const{status} = req.body;
 
@@ -58,12 +58,11 @@ mongoose.connect(db,
         })
             } catch (error) {
                 console.log('something went wrong', error)
-            }
+            }})
+   
+       
 
-
-
-
-
+    
             //delete a todo
             app.delete('/todos/:id',async(req,res)=>{
                 try{
@@ -77,8 +76,6 @@ mongoose.connect(db,
                     console.log('Something Went Wrong', error);
                 }
             })
-        }
-    )
 
 
    
