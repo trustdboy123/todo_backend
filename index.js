@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
+import TodoModel from './schemas/todo_schemas.js';
 
 dotenv.config();
 const app = express();
@@ -15,7 +16,7 @@ mongoose.connect(db,
     console.log(err)})
 
     //create a Todo
-    app.post('/todo',async(req,res)=>{
+    app.post('/todos',async(req,res)=>{
         try{
             const newTodo =await TodoModel.create({...req.body})
             res.status(201).json({
@@ -46,7 +47,7 @@ mongoose.connect(db,
  
      })
          //update a todo
-    app.patch('/todo/id', async(req,res)=>{ try {
+    app.patch('/todos/:id', async(req,res)=>{ try {
         const{id} = re.params;
         const{status} = req.body;
 
